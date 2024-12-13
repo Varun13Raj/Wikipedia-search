@@ -1,42 +1,38 @@
-package pages;
+package com.wikipedia.pages;
 
-import base.WebDriverSingleton;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.WaitUtils;
+import com.wikipedia.utilities.WaitUtils;
 
-public class HomePage {
+public class WikipediaSearchPage {
 
     private WebDriver driver;
     private WaitUtils wait;
 
-    // Define WebElements using PageFactory
+    private static Logger logger = LogManager.getLogger(WikipediaSearchPage.class);
     @FindBy(xpath = "//form[@id = 'searchform']/div//input")
     private WebElement searchInput;
-
     @FindBy(xpath = "//form[@id='searchform']//button")
     private WebElement searchButton;
-
     @FindBy(xpath = "//th[text() = 'Capital']/..//td/a")
     private WebElement capitalLink;
-
-    public HomePage(WebDriver driver) {
+    public WikipediaSearchPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WaitUtils(driver);
         PageFactory.initElements(driver, this);
     }
-
     public void searchForCountry(String countryName) {
-      //  driver.navigate().refresh();
-            wait.waitForVisisblity(searchInput);
-            searchInput.sendKeys(countryName);
-            wait.waitforClickable(searchButton);
-            searchButton.click();
-        }
+        logger.info("Starting search method for country on wikipedia :");
+        //  driver.navigate().refresh();
+        wait.waitForVisisblity(searchInput);
+        searchInput.sendKeys(countryName);
+        wait.waitforClickable(searchButton);
+        searchButton.click();
+    }
     public String getCapitalOfCountry() {
         return capitalLink.getText();
     }

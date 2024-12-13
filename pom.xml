@@ -68,13 +68,6 @@
       <version>2.20.0</version>
     </dependency>
 
-    <dependency>
-      <groupId>com.browserstack</groupId>
-      <artifactId>browserstack-java-sdk</artifactId>
-      <version>LATEST</version>
-      <scope>compile</scope>
-    </dependency>
-
   </dependencies>
 
   <build>

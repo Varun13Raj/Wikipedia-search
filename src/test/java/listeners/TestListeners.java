@@ -3,7 +3,7 @@ package listeners;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utils.ScreenShotUtils;
+import com.wikipedia.utilities.ScreenShotUtils;
 
 public class TestListeners  implements ITestListener {
 

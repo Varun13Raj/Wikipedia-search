@@ -1,21 +1,17 @@
-package base;
+package com.wikipedia.webDriverSetup;
 
 import org.openqa.selenium.WebDriver;
-import factiry.BrowserFactory;
+import com.wikipedia.browserFactory.BrowserFactoryWithoutLT;
 
-public class WebDriverSingleton {
-
+public class WebDriverSingletonWithoutLT {
     private static WebDriver driver;
-
-    private WebDriverSingleton() {}
-
+    private WebDriverSingletonWithoutLT() {}
     public static WebDriver getDriver(String browser) {
         if (driver == null) {
-            driver = BrowserFactory.getDriver(browser);
+            driver = BrowserFactoryWithoutLT.getDriver(browser);
         }
         return driver;
     }
-
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();

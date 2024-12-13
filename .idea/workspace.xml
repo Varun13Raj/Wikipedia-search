@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cb62e97-d406-4325-8d5f-f5a80dae9de3" name="Changes" comment="wikipidea.Test">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/browserFactory/BrowserFactoryLT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/webDriverSetup/LambdTestWebdriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/webDriverSetup/LambdaTestSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/testng-LambdaTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/webDriverSetup/BaseTestWithoutLT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/WebDriverSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/webDriverSetup/WebDriverSingletonWithoutLT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/browserstack/BaseTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/browserstack/CapabelitiesFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factiry/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/browserFactory/BrowserFactoryWithoutLT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/pages/WikipediaSearchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ScreenShotUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/utilities/ScreenShotUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/WaitUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wikipedia/utilities/WaitUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test/SausLabTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test/WikipideaSearchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/TestListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/TestListeners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/browserstack.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testng-LambdaTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng-LambdaTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

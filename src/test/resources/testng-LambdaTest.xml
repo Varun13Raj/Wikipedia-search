@@ -19,12 +19,12 @@
         </classes>
     </test>
 
-   <!-- <test name="EdgeTest">
+    <test name="EdgeTest">
         <parameter name="browserName" value="Edge"></parameter>
         <parameter name="browserVersion" value="131"></parameter>
         <parameter name="osVersion" value="Windows 11"></parameter>
         <classes>
             <class name="Test.WikipideaSearchTest"/>
         </classes>
-    </test>  -!>
+    </test>
 </suite>

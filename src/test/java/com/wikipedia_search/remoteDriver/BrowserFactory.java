@@ -8,15 +8,33 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Properties;
 
 public class BrowserFactory {
 
     public static WebDriver getDriver(String browserName, String browserVersion, String osVersion, String platformName) throws MalformedURLException {
         WebDriver driver;
         String url;
+
+        Properties properties = new Properties();
+        try (FileInputStream fis = new FileInputStream("src/test/resources/config.properties")) {
+            properties.load(fis);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load config.properties file", e);
+        }
+
+        String username = properties.getProperty("LT_USERNAME");
+        String accessKey = properties.getProperty("LT_ACCESS_KEY");
+
+        if (username == null || accessKey == null) {
+            throw new IllegalArgumentException("LambdaTest username and access key must be specified in the config.properties file.");
+        }
 
         HashMap<String, Object> options = new HashMap<>();
         options.put("browserName", browserName);
@@ -25,8 +43,8 @@ public class BrowserFactory {
 
         if ("LambdaTest".equalsIgnoreCase(platformName)) {
             url = "https://hub.lambdatest.com/wd/hub";
-            options.put("username", "varunsingh16067");
-            options.put("accessKey", "WQd2hh2nhbtaDktrjv50KlLbW8Kg3ZlRCnbdUaD5kg9elZjoew");
+            options.put("username", username);
+            options.put("accessKey", accessKey);
             options.put("build", "WikipediaTestBuild");
             options.put("project", "WikipediaTestProject");
 

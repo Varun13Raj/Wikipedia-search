@@ -1,13 +1,14 @@
 package com.wikipedia_search.Test;
 
 import com.wikipedia_search.testData.DataProviders;
-import com.wikipedia_search.webDriverSetup.LambdaTestSetup;
+import com.wikipedia_search.webDriverSetup.BaseTestSetup;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(com.wikipedia_search.listeners.TestListener.class)
-public class WikipideaSearchTest extends LambdaTestSetup {
+public class WikipideaSearchTest extends BaseTestSetup {
+
     @Test(dataProvider = "CountryCapitalData", dataProviderClass = DataProviders.class)
     public void testSearchCapital(String country, String expectedCapital) {
         wikipediaSearchPage.searchForCountry(country);

@@ -1,4 +1,4 @@
-package com.wikipedia.utilities;
+package com.wikipedia_search.utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;

@@ -48,12 +48,6 @@
       <artifactId>selenium-java</artifactId>
       <version>4.24.0</version>
     </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.10.2</version>
-      <scope>compile</scope>
-    </dependency>
     <!-- Log4j 2 -->
     <!-- https://mvnrepository.com/artifact/log4j/log4j -->
     <dependency>

@@ -1,11 +1,11 @@
-package listeners;
+package com.wikipedia_search.listeners;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import com.wikipedia.utilities.ScreenShotUtils;
+import com.wikipedia_search.utilities.ScreenShotUtils;
 
-public class TestListeners  implements ITestListener {
+public class TestListener implements ITestListener {
 
 private WebDriver driver;
 

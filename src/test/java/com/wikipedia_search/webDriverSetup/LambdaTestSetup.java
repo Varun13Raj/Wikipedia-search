@@ -1,9 +1,9 @@
-package com.wikipedia.webDriverSetup;
+package com.wikipedia_search.webDriverSetup;
 
-import com.wikipedia.browserFactory.BrowserFactoryLT;
+import com.wikipedia_search.pages.WikipediaSearchPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import com.wikipedia.pages.WikipediaSearchPage;
+
 import java.net.MalformedURLException;
 
 public class LambdaTestSetup {
@@ -12,8 +12,17 @@ public class LambdaTestSetup {
 
     @Parameters({"browserName", "browserVersion", "osVersion"})
     @BeforeTest
-    public void setUp(String browserName , String browserVersion, String osVersion) throws MalformedURLException {
-        driver = BrowserFactoryLT.getDriver(browserName,browserVersion, osVersion);
+    public void setUp(
+            @Optional("Chrome") String browserName,
+            @Optional("latest") String browserVersion,
+            @Optional("Windows 10") String osVersion
+    ) throws MalformedURLException {
+
+        browserName = System.getProperty("browserName", browserName);
+        browserVersion = System.getProperty("browserVersion", browserVersion);
+        osVersion = System.getProperty("osVersion", osVersion);
+
+        driver = LambdTestWebdriver.getDriver(browserName, browserVersion, osVersion);
         driver.manage().window().maximize();
         wikipediaSearchPage = new WikipediaSearchPage(driver);
     }
@@ -29,6 +38,6 @@ public class LambdaTestSetup {
 
     @AfterSuite
     public void tearDown() {
-        LambdTestWebdriver.quitDriver();
+        LambdTestWebdriver.quitDriver(driver);
     }
 }

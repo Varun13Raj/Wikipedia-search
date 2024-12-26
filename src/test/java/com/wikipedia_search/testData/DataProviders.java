@@ -1,10 +1,9 @@
-package testData;
-
+package com.wikipedia_search.testData;
 import org.testng.annotations.DataProvider;
 
 public class DataProviders {
 
-    @DataProvider(name = "Login")
+    @DataProvider(name = "CountryCapitalData")
     public static Object[][] dpMethod() {
         return new Object[][]{
                 {"India", "New Delhi"},
@@ -12,5 +11,4 @@ public class DataProviders {
                 {"France", "Paris"}
         };
     }
-
 }

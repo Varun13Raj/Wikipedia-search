@@ -1,24 +1,23 @@
-package com.wikipedia.utilities;
+package com.wikipedia_search.utilities;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class WaitUtils {
-    private WebDriver driver;
-    private WebDriverWait wait;
 
-    private static Logger logger = LogManager.getLogger(WaitUtils.class);
+    private final WebDriverWait wait;
+    private static final Logger logger = LogManager.getLogger(WaitUtils.class);
 
     public WaitUtils(WebDriver driver) {
-        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
-    public WebElement waitForVisisblity(WebElement element) {
+    public WebElement waitForVisibility(WebElement element) {
         try {
             return wait.until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e) {
@@ -26,8 +25,7 @@ public class WaitUtils {
             return element;
         }
     }
-
-    public WebElement waitforClickable(WebElement element) {
+    public WebElement waitForClickable(WebElement element) {
         try {
             return wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (Exception e) {
@@ -45,3 +43,4 @@ public class WaitUtils {
         }
     }
 }
+

@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="MySuite" thread-count="3" parallel="tests">
+
+    <listeners>
+        <listener class-name="com.wikipedia_search.listeners.TestListener"/>
+    </listeners>
+
+    <!-- Test for Chrome -->
     <test name="ChromeTest">
-        <parameter name="browserName" value="Chrome"></parameter>
-        <parameter name="browserVersion" value="131"></parameter>
-        <parameter name="osVersion" value="Windows 11"></parameter>
+        <parameter name="browserName" value="Chrome" />
+        <parameter name="browserVersion" value="131" />
+        <parameter name="osVersion" value="Windows 11" />
         <classes>
-            <class name="Test.WikipideaSearchTest"/>
+            <class name="com.wikipedia_search.Test.WikipideaSearchTest" />
         </classes>
     </test>
 
+    <!-- Test for Firefox -->
     <test name="FireFoxTest">
-        <parameter name="browserName" value="Firefox"></parameter>
-        <parameter name="browserVersion" value="132"></parameter>
-        <parameter name="osVersion" value="Windows 11"></parameter>
+        <parameter name="browserName" value="Firefox" />
+        <parameter name="browserVersion" value="132" />
+        <parameter name="osVersion" value="Windows 11" />
         <classes>
-            <class name="Test.WikipideaSearchTest"/>
+            <class name="com.wikipedia_search.Test.WikipideaSearchTest" />
         </classes>
     </test>
 
+    <!-- Test for Edge -->
     <test name="EdgeTest">
-        <parameter name="browserName" value="Edge"></parameter>
-        <parameter name="browserVersion" value="131"></parameter>
-        <parameter name="osVersion" value="Windows 11"></parameter>
+        <parameter name="browserName" value="Edge" />
+        <parameter name="browserVersion" value="131" />
+        <parameter name="osVersion" value="Windows 11" />
         <classes>
-            <class name="Test.WikipideaSearchTest"/>
+            <class name="com.wikipedia_search.Test.WikipideaSearchTest" />
         </classes>
     </test>
+
 </suite>

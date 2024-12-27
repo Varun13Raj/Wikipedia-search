@@ -29,8 +29,8 @@ public class BrowserFactory {
             throw new RuntimeException("Failed to load config.properties file", e);
         }
 
-        String username = properties.getProperty("LT_USERNAME");
-        String accessKey = properties.getProperty("LT_ACCESS_KEY");
+        String username = System.getProperty("LT_USERNAME", properties.getProperty("LT_USERNAME"));
+        String accessKey = System.getProperty("LT_ACCESS_KEY", properties.getProperty("LT_ACCESS_KEY"));
 
         if (username == null || accessKey == null) {
             throw new IllegalArgumentException("LambdaTest username and access key must be specified in the config.properties file.");
